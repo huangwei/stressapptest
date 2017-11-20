@@ -197,6 +197,9 @@ void OsLayer::GetFeatures() {
   // For now assume neon and don't run -W if you don't have it.
   has_vector_ = true; // NEON.
 #warning "Unsupported CPU type ARMV7A: unable to determine feature set."
+#elif defined(STRESSAPPTEST_CPU_AARCH64)
+  has_vector_ = true;
+#warning "Unsupported CPU type AARCH64: unable to determine feature set."
 #else
 #warning "Unsupported CPU type: unable to determine feature set."
 #endif
